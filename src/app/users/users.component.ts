@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class UsersComponent implements OnInit {
 
 
-  users: Object;
+  users: any;
 
 
   constructor(private data: DataService) { }
