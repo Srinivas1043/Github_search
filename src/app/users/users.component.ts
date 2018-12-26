@@ -7,13 +7,13 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
 
 
-  users: Object;
-
+  users: any;
+  username:string;
 
   constructor(private data: DataService) { }
 
@@ -22,13 +22,14 @@ export class UsersComponent implements OnInit {
       
   }
 
-  search(username: any)
+  search(loginname)
   {
-    console.log(username);
-    let valuser = username.target.value;
-    
-    this.data.getUsers(valuser).subscribe(
+    this.username =  loginname;
+    console.log(this.username);
+    return this.data.getUsers(loginname).subscribe(
       data => this.users = data    )
+
+      
     }
 
 }
