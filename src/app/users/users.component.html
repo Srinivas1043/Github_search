@@ -2,7 +2,7 @@
 
 <form class="uk-search uk-search-navbar">
 <span uk-search-icon></span>
-<input class="uk-search-input"  type="search" placeholder="Search Username" (keyup)="search($event)">
+<input class="uk-search-input"  type="search" placeholder="Search Username" (keyup.enter)="search($event)">
 </form>
 
 <ul *ngFor="let user of users?.items"> 
